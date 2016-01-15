@@ -1,0 +1,24 @@
+{
+  "method"        : "chemex_s",
+  "ounces"        : 10,
+  "grams-o-beans" : 18,
+  "shame"         : false
+}
+{
+  "method"        : "chemex_M",
+  "ounces"        : 20,
+  "grams-o-beans" : 36,
+  "shame"         : false
+}
+{
+  "method"        : "chemex_l",
+  "ounces"        : 35,
+  "grams-o-beans" : 64,
+  "shame"         : false
+}
+{
+  "method"        : "keurig",
+  "ounces"        : 8,
+  "grams-o-beans" : 0,
+  "shame"         : true
+}

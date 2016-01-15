@@ -1,0 +1,72 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="coffiene">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>coffiene</title>
+
+    <!-- SCROLLS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <style>
+        html                    { overflow-y:scroll; }
+        body                    { padding-top:50px; }
+        #brew-list              { margin-bottom:30px; }
+    </style>
+
+    <!-- SPELLS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="core.js"></script>
+
+</head>
+<!-- SET THE CONTROLLER AND GET ALL TODOS -->
+<body ng-controller="mainController">
+    <div class="container">
+
+        <!-- HEADER AND BREW COUNT -->
+        <div class="jumbotron text-center">
+            <h1>I'm Coffienated</h1>
+            <span class="label label-info">You've brewed {{ brews.length }} times.</span>
+        </div>
+
+        <!-- FORM TO CREATE brew -->
+        <div id="brew-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form>
+                    <div class="form-group">
+
+                        <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                        <input type="text" class="form-control input-sm text-center" placeholder="Barista like @michaelp or @kylea" ng-model="formData.barista">
+                        <input type="text" class="form-control input-sm text-center" placeholder="brewMethod like, chemex_l, or Keurig... ick." ng-model="formData.brewMethod">
+                        <input type="date" class="form-control input-sm text-center" placeholder="Probably today..."  ng-model="formData.date">
+                    </div>
+
+                    <!-- createToDo() WILL CREATE NEW TODOS -->
+                    <button type="submit" class="btn btn-primary btn-md" ng-click="createBrew()">Brew!</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- BREW LIST -->
+        <div id="brew-list" class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+
+                <!-- LOOP OVER THE BREWS IN $scope.brews -->
+                <div class="checkbox" ng-repeat="brew in brews">
+                    <label>
+                        <input type="checkbox" ng-click="deleteBrew(brew._id)">{{ brew.brewMethod }} | {{ brew.barista }} | {{ brew.date | date:'MM/dd/yyyy'}}
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
