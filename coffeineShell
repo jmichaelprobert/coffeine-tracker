@@ -1,0 +1,14 @@
+Coffeine Shell version 0.0.1
+usage: coffeine [authentication] [request]
+    -h [ --help ]                display tool help
+  ======================================================
+  Commands
+    --brew                 log a brew
+    --unbrew               delete brew
+    --gimmee              list brews
+    --v                    version
+
+  Modifiers
+    --b                    barista
+    --bm                   brewMethod (separate with '#' search any brewMethod specified)
+    --d                    date (separate with '&' for date range)

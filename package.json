@@ -1,7 +1,7 @@
 {
-  "name"         : "Coffiene",
+  "name"         : "coffeine",
   "version"      : "0.0.1",
-  "description"  : "Coffiene Tracker",
+  "description"  : "track your coffeine intake",
   "main"         : "app.js",
   "author"       : "jmprobert",
   "dependencies"  : {
