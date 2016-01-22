@@ -11,7 +11,7 @@
 
   // configuration =============================================================
   // connect to mongoDB on modulus.io
-  mongoose.connect('mongodb://localhost:27017/coffiene', function(err, db) {
+  mongoose.connect('mongodb://localhost:27017/coffeine', function(err, db) {
     assert.equal(null, err);
     console.log("Successfully connected to server");
   });
@@ -48,16 +48,16 @@
 
      // modules ================================================================
 
-     var listBrews =
+     /*var listBrews =
          // use mongoose to get all brews in the database
-         brew.find(function(err, brews) {
+         brew.find(function(err, res) {
 
              // if there is an error retrieving, send the error. nothing after res.send(err)
              if (err)
                  res.send(err)
 
-             res.json(brews); // return all brews in JSON format
-         });
+             res.json(brews); // return all todos in JSON format
+         });*/
 
      // routes =================================================================
 
@@ -65,15 +65,11 @@
           // get all brews
           app.get('/api/brews', function(req, res) {
 
-              // use mongoose to get all brews in the database
-              brew.find(function(err, brews) {
-
-                  // if there is an error retrieving, send the error. nothing after res.send(err)
-                  if (err)
-                      res.send(err)
-
-                  res.json(brews); // return all brews in JSON format
-              });
+            brew.find(function(err, brews) {
+                if (err)
+                    res.send(err)
+                res.json(brews);
+            });
           });
 
           // get all brewMethods

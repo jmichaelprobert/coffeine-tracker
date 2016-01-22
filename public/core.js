@@ -1,5 +1,5 @@
 // public/core.js
-var coffiene = angular.module('coffiene', []);
+var coffeine = angular.module('coffeine', []);
 
 function mainController($scope, $http) {
     $scope.formData = {};
